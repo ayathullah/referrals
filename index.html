@@ -22,7 +22,7 @@
             <button onclick="filterCategory('Energy', this)" class="category-btn px-4 py-2 rounded-full text-sm font-medium bg-white text-gray-600 border border-gray-200 hover:bg-gray-100 transition-all cursor-pointer">Energy</button>
             <button onclick="filterCategory('Cashback', this)" class="category-btn px-4 py-2 rounded-full text-sm font-medium bg-white text-gray-600 border border-gray-200 hover:bg-gray-100 transition-all cursor-pointer">Cashback</button>
             <button onclick="filterCategory('Banking', this)" class="category-btn px-4 py-2 rounded-full text-sm font-medium bg-white text-gray-600 border border-gray-200 hover:bg-gray-100 transition-all cursor-pointer">Banking</button>
-      <button onclick="filterCategory('Software & Tech', this)" class="category-btn px-4 py-2 rounded-full text-sm font-medium bg-white text-gray-600 border border-gray-200 hover:bg-gray-100 transition-all cursor-pointer">Software & Tech</button>
+            <button onclick="filterCategory('Software & Tech', this)" class="category-btn px-4 py-2 rounded-full text-sm font-medium bg-white text-gray-600 border border-gray-200 hover:bg-gray-100 transition-all cursor-pointer">Software & Tech</button>
         </div>
 
         <div id="cards-grid" class="grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -52,7 +52,11 @@
             grid.innerHTML = '';
             
             links.forEach(item => {
-                const badgeColor = item.category === 'Energy' ? 'bg-emerald-50 text-emerald-700' : 'bg-amber-50 text-amber-700';
+                let badgeColor = 'bg-gray-100 text-gray-700';
+                if (item.category === 'Energy') badgeColor = 'bg-emerald-50 text-emerald-700';
+                else if (item.category === 'Cashback') badgeColor = 'bg-amber-50 text-amber-700';
+                else if (item.category === 'Banking') badgeColor = 'bg-blue-50 text-blue-700';
+                else if (item.category === 'Software & Tech') badgeColor = 'bg-purple-50 text-purple-700';
                 
                 const card = document.createElement('div');
                 card.className = 'referral-card bg-white rounded-2xl border border-gray-200 p-5 shadow-xs flex flex-col justify-between transition-all hover:shadow-md';
