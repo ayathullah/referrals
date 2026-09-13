@@ -1,0 +1,30 @@
+[
+  {
+    "company": "Octopus Energy",
+    "category": "Energy",
+    "offer": "Referee gets £50 and referrer £50",
+    "url": "https://share.octopus.energy/silk-resort-416",
+    "logo": "https://www.google.com/s2/favicons?domain=octopus.energy&sz=128"
+  },
+  {
+    "company": "EDF Energy",
+    "category": "Energy",
+    "offer": "Both get £50 bill credit",
+    "url": "https://edfenergy.com/quote/refer-a-friend/kind-lark-9844",
+    "logo": "https://www.google.com/s2/favicons?domain=edfenergy.com&sz=128"
+  },
+  {
+    "company": "TopCashback",
+    "category": "Cashback",
+    "offer": "Referrer gets £25 and Referee gets £10",
+    "url": "https://www.topcashback.co.uk/ref/ayathullah",
+    "logo": "https://www.google.com/s2/favicons?domain=topcashback.co.uk&sz=128"
+  }
+  {
+  "company": "Google Workspace",
+  "category": "Software & Tech",
+  "offer": "10% off the first year on Business Starter or Business Standard",
+  "url": "https://referworkspace.app.goo.gl/FhfJ",
+  "logo": "https://www.google.com/s2/favicons?domain=workspace.google.com&sz=128"
+}
+]
