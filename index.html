@@ -39,11 +39,25 @@
 
         async function loadLinks() {
             try {
-                const response = await fetch('links.json');
+                // Using a dynamic relative path builder to safely fetch links.json regardless of subpaths or repository names
+                const basePath = window.location.pathname.substring(0, window.location.pathname.lastIndexOf('/'));
+                const response = await fetch(basePath + '/links.json');
+                
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                
                 allLinks = await response.json();
                 renderCards(allLinks);
             } catch (error) {
-                console.error('Error loading links:', error);
+                console.error('Error loading links, trying fallback root fetch:', error);
+                try {
+                    const fallbackResponse = await fetch('./links.json');
+                    allLinks = await fallbackResponse.json();
+                    renderCards(allLinks);
+                } catch (fallbackError) {
+                    console.error('Failed to load links.json:', fallbackError);
+                }
             }
         }
 
